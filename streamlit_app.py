@@ -12,7 +12,7 @@ st.set_page_config(
 #-----------------------------------------------------------------------------------------------------
 
 # Rebuild the model architecture
-model = TFAutoModel.from_pretrained("distilbert/distilbert-base-uncased")
+model = TFAutoModel.from_pretrained("distilbert/distilbert-base-uncased", from_pt=True)
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 
 class BERTForClassification(tf.keras.Model):
@@ -151,4 +151,5 @@ st.markdown("""
     <p style='text-align: center; color: grey;'>
         Built using Streamlit | ⚠️ Please verify important info from trusted sources! | <a href="https://github.com/Shardium/COVID-News-Classifier-with-BERT" style="color: #4ecdc4; text-decoration: none;" target="_blank">GitHub</a>
     </p>
+
 """, unsafe_allow_html=True)
