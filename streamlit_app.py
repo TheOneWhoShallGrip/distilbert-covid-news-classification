@@ -3,6 +3,7 @@ import tensorflow as tf
 from transformers import AutoTokenizer, TFAutoModel
 import numpy as np
 import os
+from huggingface_hub import hf_hub_download
 
 st.set_page_config(
     page_title="Covid News Detector with DistilBERT",
@@ -37,8 +38,12 @@ dummy_inputs = {
 }
 classifier(dummy_inputs)
 
+
+weights_path = hf_hub_download(
+    repo_id="Shardium/distilbert-covid-weights",
+    filename="model_weights.h5"
+)
 # Check if weight file exists or not
-weights_path = "model_weights.h5"
 if os.path.exists(weights_path):
     classifier.load_weights(weights_path)
 else:
@@ -153,5 +158,6 @@ st.markdown("""
     </p>
 
 """, unsafe_allow_html=True)
+
 
 
