@@ -1,6 +1,8 @@
-streamlit
-tensorflow
-tf-keras
-transformers
+streamlit==1.31.0
+tensorflow==2.15.0
+transformers==4.37.2
+tokenizers==0.15.2
+safetensors==0.4.2
+numpy<2
 scikit-learn
 pandas
