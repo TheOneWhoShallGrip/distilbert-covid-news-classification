@@ -7,3 +7,4 @@ safetensors==0.4.2
 numpy<2
 scikit-learn
 pandas
+huggingface-hub
