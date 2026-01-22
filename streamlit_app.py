@@ -12,7 +12,7 @@ st.set_page_config(
 #-----------------------------------------------------------------------------------------------------
 
 # Rebuild the model architecture
-model = TFAutoModel.from_pretrained("distilbert/distilbert-base-uncased")
+model = TFAutoModel.from_pretrained("distilbert/distilbert-base-uncased", from_pt=True)
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 
 class BERTForClassification(tf.keras.Model):
@@ -153,4 +153,5 @@ st.markdown("""
     </p>
 
 """, unsafe_allow_html=True)
+
 
